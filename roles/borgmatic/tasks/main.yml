@@ -15,8 +15,15 @@
 - name: Borg and borgmatic are installed
   ansible.builtin.package:
     name:
-      - borgmatic
+      - pipx
       - borgbackup
+  when: borgmatic_install
+
+- name: Borg and borgmatic are installed via pipx
+  community.general.pipx:
+    name:
+      - ensurepath
+      - borgmatic
   when: borgmatic_install
 
 - name: Configure Borgmatic
