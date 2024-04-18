@@ -22,7 +22,6 @@
 - name: Borg and borgmatic are installed via pipx
   community.general.pipx:
     name:
-      - ensurepath
       - borgmatic
   when: borgmatic_install
 
