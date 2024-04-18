@@ -16,6 +16,7 @@
   ansible.builtin.package:
     name:
       - pipx
+      - python3-venv
       - borgbackup
   when: borgmatic_install
 
